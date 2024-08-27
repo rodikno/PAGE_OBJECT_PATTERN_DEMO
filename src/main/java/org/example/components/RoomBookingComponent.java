@@ -33,7 +33,7 @@ public class RoomBookingComponent extends BasePage {
     public static final By phoneField = By.name("phone");
 
     // Buttons
-    public static final By openBookingButton = By.cssSelector("button.openBooking");
+    public static final By bookThisRoomButton = By.cssSelector("button.openBooking");
     public static final By cancelBookingButton = By.xpath("//button[text()='Cancel']");
     public static final By submitBookingButton = By.xpath("//button[text()='Book']");
 
@@ -58,13 +58,10 @@ public class RoomBookingComponent extends BasePage {
         driver.findElement(phoneField).sendKeys(faker.phoneNumber().cellPhone());
     }
 
-    public void selecRangeInCalendarForARandomWeek() {
+    public void selectRangeInCalendarForARandomWeek() {
         WebElement calendar = driver.findElement(monthViewCalendarDiv);
-
         List<WebElement> weeks = calendar.findElements(weeksOfMonthElements);
-
         List<WebElement> daysOfWeek = weeks.get(0).findElements(daysOfWeekElements);
-
 
         new Actions(driver)
                 .clickAndHold(daysOfWeek.get(0))
@@ -74,7 +71,7 @@ public class RoomBookingComponent extends BasePage {
     }
 
     public void expand() {
-        waitForElementToBeClickable(componentRoot.findElement(openBookingButton)).click();
+        waitForElementToBeClickable(componentRoot.findElement(bookThisRoomButton)).click();
     }
 
     public void collapse() {

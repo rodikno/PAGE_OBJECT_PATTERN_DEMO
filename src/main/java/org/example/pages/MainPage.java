@@ -9,8 +9,10 @@ public class MainPage extends BasePage {
     private static final String PAGE_URI = "https://automationintesting.online/";
     private RoomBookingComponent roomBookingSection;
 
+    // Locators
     private static final By hotelDescription = By.xpath("//div[@class='row hotel-description']");
     private static final By letMeHackButton = By.xpath("//div[@data-toggle='collapse']/button");
+    private static final By formSubmitButton = By.id("name");
 
     public MainPage(WebDriver driver) throws InterruptedException {
         super(driver);
