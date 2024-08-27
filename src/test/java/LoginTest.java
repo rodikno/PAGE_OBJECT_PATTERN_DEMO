@@ -31,11 +31,9 @@ public class LoginTest {
         roomBookingSection.populateBookingFormWithRandomData();
         roomBookingSection.submitBooking();
 
-        String bookingSuccessText = roomBookingSection.getSuccessWindow().findElement(RoomBookingComponent.bookingSuccessTitle).getText()
+        String bookingSuccessText = roomBookingSection.getSuccessWindow().findElement(RoomBookingComponent.bookingSuccessTitle).getText();
 
         Assert.assertEquals(bookingSuccessText, "Booking Successful!");
-
-        Thread.sleep(3000);
     }
 
     @AfterMethod
