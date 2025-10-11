@@ -17,7 +17,7 @@ public class MainPage extends BasePage {
     public MainPage(WebDriver driver) throws InterruptedException {
         super(driver);
         driver.get(PAGE_URI);
-        waitForElementToBeVisible(driver.findElement(letMeHackButton)).click();
+//        waitForElementToBeVisible(driver.findElement(letMeHackButton)).click();
         this.roomBookingSection = new RoomBookingComponent(driver);
     }
 
